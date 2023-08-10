@@ -2,10 +2,10 @@
 Employee database analysis using SQL
 
 ## Table of Contents
-* [Background](https://github.com/dspataru/matplotlib-challenge/blob/main/README.md#background)
-* [Data Modeling: Creating an ERD](https://github.com/dspataru/matplotlib-challenge/blob/main/README.md#study-observations)
-* [Data Engineering: Creating Table Schemas and Importing the CSV Files](https://github.com/dspataru/matplotlib-challenge/blob/main/README.md#merged-dataframe)
-* [Data Analysis: Querying the Tables](https://github.com/dspataru/matplotlib-challenge/blob/main/README.md#summary-statistics)
+* [Background](https://github.com/dspataru/sql-challenge/blob/main/README.md#background)
+* [Data Modeling: Creating an ERD](https://github.com/dspataru/sql-challenge/blob/main/README.md#data-modeling-creating-an-erd)
+* [Data Engineering: Creating Table Schemas and Importing the CSV Files](https://github.com/dspataru/sql-challenge/blob/main/README.md#data-engineering-creating-table-schemas-and-importing-the-csv-files)
+* [Data Analysis: Querying the Tables](https://github.com/dspataru/sql-challenge/blob/main/README.md#data-analysis-querying-the-tables)
 
 ## Background
 
