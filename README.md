@@ -1,5 +1,4 @@
-# sql-challenge
-Employee database analysis using SQL
+# sql-challenge: Employee database analysis using SQL
 
 ## Table of Contents
 * [Background](https://github.com/dspataru/sql-challenge/blob/main/README.md#background)
