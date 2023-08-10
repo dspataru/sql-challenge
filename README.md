@@ -39,6 +39,53 @@ After the ERD was created, the next step was to create a table schema for each o
 2. When assigning the primary key, it is important to assign based on the unique column. Otherwise, a composite key can be created which takes two primary keys to uniquely identify a row.
 3. The order in which the tables are created in pgAdmin are important so the foreign keys are handled correctly.
 
+Below shows the order in which the tables needed to be created:
+```sql
+CREATE TABLE titles (
+	title_id VARCHAR(5) NOT NULL,
+	title VARCHAR(50) NOT NULL,
+	PRIMARY KEY (title_id)
+);
+
+CREATE TABLE employees (
+	emp_no INT NOT NULL,
+	emp_title VARCHAR(5) NOT NULL,
+	birth_date VARCHAR(10),
+	first_name VARCHAR(30) NOT NULL,
+	last_name VARCHAR(30) NOT NULL,
+	sex VARCHAR(1),
+	hire_date VARCHAR(10) NOT NULL,
+	PRIMARY KEY (emp_no),
+	FOREIGN KEY (emp_title) REFERENCES titles(title_id)
+);
+
+CREATE TABLE departments (
+	dept_no VARCHAR(5) NOT NULL,
+	dept_name VARCHAR(50) NOT NULL,
+	PRIMARY KEY (dept_no)
+);
+
+CREATE TABLE salaries (
+	emp_no INT NOT NULL,
+	salary INT NOT NULL,
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
+);
+
+CREATE TABLE dept_manager (
+	dept_no VARCHAR(5) NOT NULL,
+	emp_no INT NOT NULL,
+	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
+);
+
+CREATE TABLE dept_emp (
+	emp_no INT NOT NULL,
+	dept_no VARCHAR(5) NOT NULL,
+	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
+);
+```
+
 [creating_tables.sql](https://github.com/dspataru/sql-challenge/blob/main/EmployeeSQL/creating_tables.sql) contains the code that was written in SQL to create the tables before importing the CSV files into each corressponding table. Item #3 above is also important to consider when importing the data. To avoid import errors, the CSV files were imported into the database in the same order in which the tables were created, while accounting for the headers when doing the imports.
 
 ## Data Analysis: Querying the Tables
